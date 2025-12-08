@@ -27,7 +27,7 @@ const PRODUCTS = [
     precio: 5950,
     presentacion: "5 ml",
     stock: "si",
-    imagen: "assets/img/productos/aromaterapia_tranquilizante.png",
+    imagen: "assets/img/productos/aromaterapia_Tranquilizante.png",
     notas: "",
     whatsappTexto: "Hola, me interesa el Roll On Tranquilizante."
   },
