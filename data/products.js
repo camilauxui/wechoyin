@@ -311,7 +311,7 @@ const PRODUCTS = [
     variedad: "Propoleo",
     nombre: "Unguento medicinal Propoleo 60 gr.",
     descripcionCorta: "Cicatrizante, regenerador de piel.",
-    descripcionLarga: "El propoleo es una resina natural producida por las abejas conocida como “antibiotico natural” de la colmena. Un unguento de propoleo es un remedio topico potente para la piel, inhibiendo el crecimiento y la propagacion de bacterias y germenes. Favorece la regeneracion de tejidos dañados y ayuda a la rapida formacion de piel nueva. Para su elaboracion se utiliza manteca de karite, aceite de oliva, cera de abeja y extracto de propoleo. Su uso es topico localizado y consistente en el area que necesita ser tratada, cubriendo el area lesionada.",
+    descripcionLarga: "El propoleo es una resina natural producida por las abejas conocida como “antibiótico natural” de la colmena. Un unguento de propoleo es un remedio topico potente para la piel, inhibiendo el crecimiento y la propagacion de bacterias y germenes. Favorece la regeneracion de tejidos dañados y ayuda a la rapida formacion de piel nueva. Para su elaboracion se utiliza manteca de karite, aceite de oliva, cera de abeja y extracto de propoleo. Su uso es topico localizado y consistente en el area que necesita ser tratada, cubriendo el area lesionada.",
     precio: 8330,
     presentacion: "60 gr.",
     stock: "si",
