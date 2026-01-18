@@ -82,43 +82,21 @@
     </div>
   </header>
 
-<!-- FILTRO -->
+<!-- ACCESOS DIRECTOS -->
 <section class="bg-light py-3 border-bottom">
   <div class="container px-4 px-lg-5">
-    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+    <div class="d-flex justify-content-center justify-content-md-end gap-2">
+      <a href="#productos" class="btn btn-outline-dark">
+        <i class="bi bi-grid-3x3-gap me-2"></i> Productos
+      </a>
 
-      <!-- Filtro -->
-      <div class="d-flex align-items-center gap-2 w-100 w-md-auto">
-        <label for="filter-category" class="fw-bold mb-0">
-          Filtrar por categoría:
-        </label>
-        <select id="filter-category" class="form-select w-auto">
-          <option value="">Todas</option>
-          <option value="Aromaterapia">Aromaterapia</option>
-          <option value="Cuidado corporal">Cuidado corporal</option>
-          <option value="Ungüentos terapéuticos">Ungüentos terapéuticos</option>
-          <option value="Cuidado facial">Cuidado facial</option>
-          <option value="Higiene personal">Higiene personal</option>
-          <option value="Aceites esenciales">Aceites esenciales</option>
-          <option value="Perfumería">Perfumería</option>
-          <option value="Cuidado capilar">Cuidado capilar</option>
-        </select>
-      </div>
-
-      <!-- Accesos rápidos -->
-      <div class="d-flex gap-2 justify-content-md-end">
-        <a href="#productos" class="btn btn-outline-dark">
-          <i class="bi bi-grid-3x3-gap me-2"></i> Productos
-        </a>
-
-        <a href="#talleres" class="btn btn-outline-dark">
-          <i class="bi bi-mortarboard me-2"></i> Talleres
-        </a>
-      </div>
-
+      <a href="#talleres" class="btn btn-outline-dark">
+        <i class="bi bi-mortarboard me-2"></i> Talleres
+      </a>
     </div>
   </div>
 </section>
+
 
 
   <!-- ✅ BANNERS PROMOCIONALES (ANTES DE PRODUCTOS) -->
@@ -260,18 +238,48 @@
 
 
   <!-- SECCIÓN DE PRODUCTOS -->
-  <section id="productos" class="py-1">
-    <div class="container px-4 px-lg-5 mt-4">
-      <div class="row mb-4">
-        <div class="col">
-          <h2 class="h4 fw-bold mb-0" id="product-page-title">Todos los productos</h2>
-        </div>
+<section id="productos" class="py-1">
+  <div class="container px-4 px-lg-5 mt-4">
+
+    <!-- Título -->
+    <div class="row mb-3">
+      <div class="col">
+        <h2 class="h4 fw-bold mb-0" id="product-page-title">
+          Todos los productos
+        </h2>
       </div>
-
-      <div id="product-grid" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-
     </div>
-  </section>
+
+    <!-- Filtro dentro de productos -->
+    <div class="row mb-4">
+      <div class="col-12 col-md-6">
+        <label for="filter-category" class="fw-bold mb-1">
+          Filtrar por categoría
+        </label>
+        <select id="filter-category" class="form-select">
+          <option value="">Todas</option>
+          <option value="Aromaterapia">Aromaterapia</option>
+          <option value="Cuidado corporal">Cuidado corporal</option>
+          <option value="Ungüentos terapéuticos">Ungüentos terapéuticos</option>
+          <option value="Cuidado facial">Cuidado facial</option>
+          <option value="Higiene personal">Higiene personal</option>
+          <option value="Aceites esenciales">Aceites esenciales</option>
+          <option value="Perfumería">Perfumería</option>
+          <option value="Cuidado capilar">Cuidado capilar</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div
+      id="product-grid"
+      class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+    >
+      <!-- JS inyecta aquí -->
+    </div>
+
+  </div>
+</section>
 
 
   <!-- ✅ SECCIÓN TALLERES -->
