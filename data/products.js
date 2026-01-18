@@ -7,7 +7,7 @@ const PRODUCTS = [
     tipo: "Roll on",
     variedad: "Migrañas y dolor de cabeza",
     nombre: "Roll on Migrañas y dolor de cabeza",
-    descripcionCorta: "Tu solucion portatil que previene el dolor de cabeza y migraña.",
+    descripcionCorta: "Tu solución portatil que previene el dolor de cabeza y migraña.",
     descripcionLarga:
       "Nuestro Roll on de aromoterapia proporciona bienestar de manera inmediata y portatil, ayudando a calmar los dolores de cabeza y migraña ya que contiene aceite esencial de menta, romero y eucalipto ,aceites que producen un efecto vasocontrictor y analgesico local adormeciendo la zona y reduciendo la intensidad del dolor. Estos aceites esenciales 100% naturales producen sinergia con el aceite de almendra como agente vehicular,  lo encontraras en un formato practico de llevar y facil de aplicar en la sien, detras de la oreja y en todo lugar donde la vena se encuentre mas expuesta, disfrutando de sus beneficios en el momento que lo necesites, tenemos el Roll On que necesitas.",
     precio: 5950,
