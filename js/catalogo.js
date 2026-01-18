@@ -10,6 +10,7 @@ function createProductCard(product) {
 
   const presentacion = product.presentacion || "";
   const categoria = product.categoria || "";
+  const descripcionCorta = product.descripcionCorta || "";
 
   col.innerHTML = `
     <div class="card h-100 position-relative">
@@ -27,7 +28,13 @@ function createProductCard(product) {
 
         ${
           categoria
-            ? `<p class="small text-secondary mb-2">${categoria}</p>`
+            ? `<p class="small text-secondary mb-1">${categoria}</p>`
+            : ""
+        }
+
+        ${
+          descripcionCorta
+            ? `<p class="small text-muted mb-2 product-card-desc">${descripcionCorta}</p>`
             : ""
         }
 
@@ -52,8 +59,6 @@ function createProductCard(product) {
   return col;
 }
 
-
-
 function renderGrid(productsToRender) {
   const grid = document.getElementById("product-grid");
   if (!grid) return;
@@ -68,7 +73,7 @@ function renderGrid(productsToRender) {
     return;
   }
 
-  productsToRender.forEach(p => {
+  productsToRender.forEach((p) => {
     grid.appendChild(createProductCard(p));
   });
 }
@@ -82,24 +87,23 @@ function applyFilters() {
   let filtered = PRODUCTS.slice();
 
   if (category) {
-    filtered = filtered.filter(p =>
-      (p.categoria || "").toLowerCase() === category.toLowerCase()
+    filtered = filtered.filter(
+      (p) => (p.categoria || "").toLowerCase() === category.toLowerCase()
     );
 
-    // Cambiar título dinámicamente
     if (titleEl) titleEl.textContent = category;
   } else {
-    // Volver al título original si no hay filtro
     if (titleEl) titleEl.textContent = "Todos los productos";
   }
 
   renderGrid(filtered);
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof PRODUCTS === "undefined") {
-    console.error("PRODUCTS no está definido. Revisa que data/products.js se cargue antes de catalogo.js");
+    console.error(
+      "PRODUCTS no está definido. Revisa que data/products.js se cargue antes de catalogo.js"
+    );
     return;
   }
 
@@ -112,3 +116,15 @@ document.addEventListener("DOMContentLoaded", () => {
     categorySelect.addEventListener("change", applyFilters);
   }
 });
+
+/*
+RECOMENDADO (CSS): agrega esto a tu css/styles.css para que la descripción breve no rompa la grilla
+
+.product-card-desc{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.35;
+}
+*/
