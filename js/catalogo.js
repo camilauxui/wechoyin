@@ -4,26 +4,39 @@ function createProductCard(product) {
   const col = document.createElement("div");
   col.className = "col mb-5";
 
-  const hasOferta = product.precioOferta && product.precioOferta < product.precio;
+  const hasOferta =
+    Number.isFinite(product.precioOferta) &&
+    product.precioOferta < product.precio;
+
+  const presentacion = product.presentacion || "";
+  const categoria = product.categoria || "";
 
   col.innerHTML = `
     <div class="card h-100 position-relative">
-      ${product.badge ? `
-        <div class="badge bg-dark text-white position-absolute" style="top:0.5rem; right:0.5rem">
-          ${product.badge}
-        </div>` : ""}
-      
+
       <img class="card-img-top" src="${product.imagen}" alt="${product.nombre}">
-      
+
       <div class="card-body p-4 text-center">
-        <h5 class="fw-bolder mb-2">${product.nombre}</h5>
-        <p class="small text-muted mb-2">${product.categoria || ""}</p>
+        <h5 class="fw-bolder mb-1">${product.nombre}</h5>
+
+        ${
+          presentacion
+            ? `<p class="small text-muted mb-1">${presentacion}</p>`
+            : ""
+        }
+
+        ${
+          categoria
+            ? `<p class="small text-secondary mb-2">${categoria}</p>`
+            : ""
+        }
 
         <div class="fs-6">
-          ${hasOferta
-            ? `<span class="text-muted text-decoration-line-through">$${product.precio.toLocaleString("es-CL")}</span>
-               <span class="ms-2 fw-bold">$${product.precioOferta.toLocaleString("es-CL")}</span>`
-            : `<span class="fw-bold">$${product.precio.toLocaleString("es-CL")}</span>`
+          ${
+            hasOferta
+              ? `<span class="text-muted text-decoration-line-through">$${product.precio.toLocaleString("es-CL")}</span>
+                 <span class="ms-2 fw-bold">$${product.precioOferta.toLocaleString("es-CL")}</span>`
+              : `<span class="fw-bold">$${product.precio.toLocaleString("es-CL")}</span>`
           }
         </div>
       </div>
@@ -38,6 +51,8 @@ function createProductCard(product) {
 
   return col;
 }
+
+
 
 function renderGrid(productsToRender) {
   const grid = document.getElementById("product-grid");

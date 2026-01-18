@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detalle de Producto | Biocosmética Wechoyin</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+<header class="hero-header hero-header-small">
+  <div class="container px-4 px-lg-9 my-3 my-md-4">
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+      <div class="hero-logo-wrapper">
+        <img src="assets/img/logo.png" alt="Biocosmética Wechoyin" class="logo-wechoyin">
+      </div>
+      <div>
+        <h1 class="h5 fw-bold mb-60" >Detalle del producto</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- DETALLE DEL PRODUCTO -->
+  <section class="py-0">
+    <div class="container px-4 px-lg-5 my-5">
+
+      <!-- Botón volver al catálogo -->
+      <div class="mb-4">
+        <a href="index.html" class="btn btn-outline-dark">
+          <i class="bi bi-arrow-left"></i> Volver al catálogo
+        </a>
+      </div>
+
+      <div id="product-not-found" class="alert alert-warning d-none">
+        Producto no encontrado. Vuelve al catálogo e intenta nuevamente.
+      </div>
+
+      <div id="product-detail" class="row gx-4 gx-lg-5 align-items-start d-none">
+        
+        <!-- Imagen grande -->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img id="product-image" class="card-img-top mb-3" src="" alt="">
+        </div>
+
+        <!-- Información del producto -->
+        <div class="col-md-6">
+          <h2 id="product-name" class="display-6 fw-bolder"></h2>
+          <p id="product-category" class="text-muted mb-2"></p>
+
+          <div class="fs-5 mb-3" id="product-prices"></div>
+
+          <p id="product-short" class="lead mb-3"></p>
+
+          <h6 class="fw-bold">Descripción</h6>
+          <p id="product-long" class="mb-3"></p>
+
+         
+          
+          <!-- Botón de compra -->
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a id="whatsapp-link" class="btn btn-success btn-lg flex-shrink-0" 
+               href="#" target="_blank" rel="noopener">
+              <i class="bi bi-whatsapp me-2"></i> Comprar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">© Biocosmética Wechoyin 2025</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="data/products.js"></script>
+  <script src="js/producto-detalle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
