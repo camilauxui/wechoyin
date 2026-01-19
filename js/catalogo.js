@@ -2,7 +2,7 @@
 
 function createProductCard(product) {
   const col = document.createElement("div");
-  col.className = "col mb-5";
+  col.className = "col mb-1";
 
   const hasOferta =
     Number.isFinite(product.precioOferta) &&
