@@ -17,8 +17,8 @@ function createProductCard(product) {
 
       <img class="card-img-top" src="${product.imagen}" alt="${product.nombre}">
 
-      <div class="card-body p-4 text-center">
-        <h5 class="fw-bolder mb-1">${product.nombre}</h5>
+      <div class="card-body p-2 text-center">
+        <h4 class="fw-bolder mb-1">${product.nombre}</h4>
 
         ${
           presentacion
@@ -117,14 +117,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-/*
-RECOMENDADO (CSS): agrega esto a tu css/styles.css para que la descripción breve no rompa la grilla
 
-.product-card-desc{
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.35;
-}
-*/

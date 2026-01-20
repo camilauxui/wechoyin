@@ -84,19 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (shortEl) shortEl.textContent = safeText(product.descripcionCorta, "Sin descripción breve disponible.");
   if (longEl) longEl.textContent = safeText(product.descripcionLarga, "Sin descripción disponible.");
 
-  // ✅ FICHA DEL PRODUCTO (ESTO ES LO QUE TE FALTABA)
-  // sku -> product-sku
-  // tipo -> product-type
-  // variedad -> product-variety
-  // presentacion -> product-presentation
+  // ✅ FICHA DEL PRODUCTO 
+ 
   setTextById("product-sku", product.sku || product.id, "No informado");
   setTextById("product-type", product.tipo, "No informado");
   setTextById("product-variety", product.variedad, "No informado");
   setTextById("product-presentation", product.presentacion, "No informado");
 
-  // Si NO quieres mostrar stock/notas, simplemente no los seteamos.
-  // (Si los dejas en el HTML, quedarán vacíos. Mejor quitarlos del HTML o poner "No informado" por defecto.)
-
+  
   // WhatsApp
   const numeroWhatsApp = "56958637021";
   const mensajeDefault =

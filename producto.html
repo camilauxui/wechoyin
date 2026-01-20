@@ -10,34 +10,89 @@
   <link href="css/styles.css" rel="stylesheet" />
 
   <style>
+    /* Reset básico para evitar franjas/espacios raros */
+    html, body { margin: 0; padding: 0; background: #f6f6f4; }
+
+    /* Header limpio, sin espacio superior y con fondo plano (sin imagen) */
+    .detail-header{
+      background: #efe6dd;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+
+    /* Contenedor mobile-first: más ancho útil */
+    .container-narrow{
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+    @media (min-width: 576px){
+      .container-narrow{ padding-left: 1rem; padding-right: 1rem; }
+    }
+    @media (min-width: 1200px){
+      .container-narrow{ max-width: 1080px; }
+    }
+
+    /* Cards más pro y compactas */
+    .card-pro{
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,.06);
+      background: #fff;
+    }
+    .card-pro.compact{ border-radius: 14px; }
+
+    /* Reduce espacios entre cards */
+    .stack-tight{ gap: .75rem !important; }
+    @media (min-width: 992px){ .stack-tight{ gap: 1rem !important; } }
+
+    /* Imagen: consistente y con marco suave */
+    #product-image{
+      border-radius: 14px;
+      background: #f2f2ef;
+      border: 1px solid rgba(0,0,0,.05);
+    }
+
     .product-hero-badge { font-size: .85rem; }
-    .product-meta .list-group-item { padding: .75rem 1rem; }
-    .product-meta .bi { opacity: .8; }
+    .product-meta .list-group-item { padding: .7rem 1rem; }
+    .product-meta .bi { opacity: .85; }
     .price-tag { font-weight: 800; letter-spacing: .2px; }
-    .sticky-aside { position: sticky; top: 1rem; }
+
+    /* Sticky solo en desktop */
+    .sticky-aside { position: static; }
+    @media (min-width: 992px){
+      .sticky-aside { position: sticky; top: 1rem; }
+    }
+
+    /* Footer simple (sin fondo oscuro pesado) */
+    .footer-min{
+      border-top: 1px solid rgba(0,0,0,.08);
+      background: #fff;
+    }
   </style>
 </head>
 
 <body>
-  <header class="hero-header hero-header-small">
-    <div class="container px-4 px-lg-9 my-3 my-md-4">
+
+  <!-- HEADER (sin espacio arriba, sin fondo del sitio) -->
+  <header class="detail-header py-3">
+    <div class="container container-narrow">
       <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
         <div class="hero-logo-wrapper">
           <img src="assets/img/logo.png" alt="Biocosmética Wechoyin" class="logo-wechoyin" />
         </div>
-        <div>
-          <h1 class="h5 fw-bold mb-60">Detalle del producto</h1>
+        <div class="text-center text-md-end">
+          <h1 class="h5 fw-bold mb-0">Detalle del producto</h1>
         </div>
       </div>
     </div>
   </header>
 
-  <section class="py-0">
-    <div class="container px-4 px-lg-5 my-5">
+  <!-- CONTENIDO -->
+  <main class="py-3 py-md-4">
+    <div class="container container-narrow">
 
-      <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-3 mb-4">
-        <a href="index.html" class="btn btn-outline-dark">
-          <i class="bi bi-arrow-left"></i> Volver al catálogo
+      <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-2 mb-3">
+        <a href="index.html" class="btn btn-outline-dark btn-sm">
+          <i class="bi bi-arrow-left me-1"></i> Volver al catálogo
         </a>
 
         <!-- Chips (opcionales) -->
@@ -47,33 +102,37 @@
         </div>
       </div>
 
-      <div id="product-not-found" class="alert alert-warning d-none">
+      <div id="product-not-found" class="alert alert-warning d-none mb-3">
         Producto no encontrado. Vuelve al catálogo e intenta nuevamente.
       </div>
 
-      <div id="product-detail" class="row g-4 align-items-start d-none">
+      <!-- Grid principal: compacto en mobile, pro en desktop -->
+      <div id="product-detail" class="row g-3 g-lg-4 align-items-start d-none">
 
+        <!-- Imagen -->
         <div class="col-12 col-lg-7">
-          <div class="card border-0 shadow-sm">
-            <div class="card-body p-3 p-md-4">
-              <img id="product-image" class="img-fluid rounded-3 w-100" src="" alt="" />
+          <div class="card card-pro compact">
+            <div class="card-body p-2 p-sm-3 p-md-4">
+              <img id="product-image" class="img-fluid w-100" src="" alt="" />
             </div>
           </div>
         </div>
 
+        <!-- Columna info -->
         <div class="col-12 col-lg-5">
-          <div class="sticky-aside">
+          <div class="sticky-aside d-flex flex-column stack-tight">
 
-            <div class="card border-0 shadow-sm">
+            <!-- Info principal -->
+            <div class="card card-pro">
               <div class="card-body p-3 p-md-4">
-                <h2 id="product-name" class="h2 fw-bold mb-2"></h2>
+                <h2 id="product-name" class="h3 fw-bold mb-2"></h2>
 
-                <p class="text-muted mb-3">
+                <p class="text-muted mb-2">
                   <span class="me-1">Categoría:</span>
                   <span id="product-category" class="fw-semibold"></span>
                 </p>
 
-                <div class="mb-3">
+                <div class="mb-2">
                   <div id="product-prices" class="fs-4 price-tag"></div>
                 </div>
 
@@ -81,15 +140,14 @@
               </div>
             </div>
 
-            <!-- FICHA (solo: SKU, Tipo, Variedad, Presentación) -->
-            <div class="card border-0 shadow-sm mt-4 product-meta">
+            <!-- Ficha + CTA -->
+            <div class="card card-pro product-meta">
               <div class="card-body p-0">
                 <div class="px-3 px-md-4 pt-3 pt-md-4 pb-2">
                   <h3 class="h6 fw-bold mb-0">Ficha del producto</h3>
                 </div>
 
                 <ul class="list-group list-group-flush">
-
                   <li class="list-group-item d-flex justify-content-between align-items-center">
                     <span class="d-flex align-items-center gap-2">
                       <i class="bi bi-upc-scan"></i> SKU
@@ -117,7 +175,6 @@
                     </span>
                     <span id="product-presentation" class="fw-semibold text-end">No informado</span>
                   </li>
-
                 </ul>
 
                 <div class="p-3 p-md-4 pt-3">
@@ -129,14 +186,14 @@
                     <i class="bi bi-whatsapp me-2"></i> Comprar por WhatsApp
                   </a>
                 </div>
-
               </div>
             </div>
 
-            <div class="card border-0 shadow-sm mt-4">
+            <!-- Descripción -->
+            <div class="card card-pro">
               <div class="card-body p-3 p-md-4">
                 <h3 class="h6 fw-bold mb-2">Descripción</h3>
-                <p id="product-long" class="mb-0"></p>
+                <p id="product-long" class="mb-0 text-muted"></p>
               </div>
             </div>
 
@@ -144,12 +201,14 @@
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <footer class="py-4 bg-dark mt-5">
-    <div class="container">
-      <p class="m-0 text-center text-white">© Biocosmética Wechoyin 2025</p>
+    </div>
+  </main>
+
+  <!-- FOOTER minimal -->
+  <footer class="footer-min py-4">
+    <div class="container container-narrow">
+      <p class="m-0 text-center text-muted">© Biocosmética Wechoyin 2026</p>
     </div>
   </footer>
 
