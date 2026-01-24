@@ -10946,3 +10946,35 @@ html, body {
 .container {
   max-width: 100%;
 }
+/* =========================
+   SECCIÓN NOSOTROS
+========================= */
+
+#nosotros {
+  background-color: #ffffff;
+}
+
+#nosotros h2 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+#nosotros p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+#nosotros .text-uppercase {
+  letter-spacing: 0.08em;
+}
+
+#nosotros .btn {
+  padding: 0.6rem 1.4rem;
+}
+
+#nosotros .card-body span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
