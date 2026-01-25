@@ -10850,10 +10850,17 @@ textarea.form-control-lg {
 }
 
 .hero-header {
-  background: linear-gradient(to bottom, #ffffff, #fde6d8cc);
-  padding-bottom: 0.8rem !important;
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(253,230,216,0.8)),
+    url("../assets/img/productos/hojas_fondo.png");
 
+  background-repeat: repeat;
+  background-size: 520px auto;
+  background-position: top left;
+
+  padding-bottom: 0.8rem !important;
 }
+
 
 /* Centrar el título del index */
 .hero-title-wrapper {
@@ -10978,3 +10985,4 @@ html, body {
   align-items: center;
   gap: 0.25rem;
 }
+
